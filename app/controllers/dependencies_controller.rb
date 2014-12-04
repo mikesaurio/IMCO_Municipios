@@ -10,6 +10,7 @@ class DependenciesController < ApplicationController
   # GET /dependencies/1
   # GET /dependencies/1.json
   def show
+        @municipio = Municipio.all 
   end
 
   # GET /dependencies/new
@@ -42,6 +43,7 @@ class DependenciesController < ApplicationController
   # PATCH/PUT /dependencies/1
   # PATCH/PUT /dependencies/1.json
   def update
+  puts "***********************"
     respond_to do |format|
       if @dependency.update(dependency_params)
         format.html { redirect_to @dependency, notice: 'Dependency was successfully updated.' }
