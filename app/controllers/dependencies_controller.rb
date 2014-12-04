@@ -15,10 +15,12 @@ class DependenciesController < ApplicationController
   # GET /dependencies/new
   def new
     @dependency = Dependency.new
+    @municipio = Municipio.all 
   end
 
   # GET /dependencies/1/edit
   def edit
+        @municipio = Municipio.all 
   end
 
   # POST /dependencies
