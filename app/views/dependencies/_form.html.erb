@@ -17,7 +17,7 @@
 </div>
 <div class="field">
  <%= f.label :municipio %><br />
- <%= collection_select(:municipios, :municipio, @municipio, :id, :nombre, {:prompt => false}) %> 
+ <%= collection_select(:dependency, :municipio_id, Municipio.all, :id, :nombre, {:prompt => false}) %> 
  </div>
 
 <div class="actions">
