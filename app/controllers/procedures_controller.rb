@@ -15,10 +15,12 @@ class ProceduresController < ApplicationController
   # GET /procedures/new
   def new
     @procedure = Procedure.new
+    @dependency = Dependency.all
   end
 
   # GET /procedures/1/edit
   def edit
+    @dependency = Dependency.all
   end
 
   # POST /procedures
@@ -69,6 +71,6 @@ class ProceduresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def procedure_params
-      params.require(:procedure).permit(:nombre, :duracion, :costo, :vigencia, :contacto)
+      params.require(:procedure).permit(:nombre, :duracion, :costo, :vigencia, :contacto, :dependency_id)
     end
 end
