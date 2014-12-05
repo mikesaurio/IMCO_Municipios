@@ -1,45 +1,50 @@
 class ProcedureRequirementsController < ApplicationController
-   before_action :set_line, only: [:show, :edit, :update, :destroy]
+ before_action :set_line, only: [:show, :edit, :update, :destroy]
 
-  def index
-     @procedure_requirements =  ProcedureRequirement.all
-  end
+ def index
+   @procedure_requirements =  ProcedureRequirement.all
+ end
 
-   def show
-  end
+ def show
+ end
 
-    def new
-    @procedure_requirement = ProcedureRequirement.new
-  end
+ def new
+  @procedure_requirement = ProcedureRequirement.new
+  @procedure = Procedure.all
+  @Requirement = Requirement.all
 
-  def edit
-  end
+end
 
-   def create
-    @procedure_requirement = ProcedureRequirement.new(line_params)
+def edit
+  @procedure = Procedure.all
+  @Requirement = Requirement.all
+end
 
-    respond_to do |format|
-      if @procedure_requirement.save
-        format.html { redirect_to @procedure_requirement, notice: 'Line was successfully created.' }
-        format.json { render :show, status: :created, location: @procedure_requirement }
-      else
-        format.html { render :new }
-        format.json { render json: @liprocedure_requirementne.errors, status: :unprocessable_entity }
-      end
+def create
+  @procedure_requirement = ProcedureRequirement.new(line_params)
+
+  respond_to do |format|
+    if @procedure_requirement.save
+      format.html { redirect_to @procedure_requirement, notice: 'Line was successfully created.' }
+      format.json { render :show, status: :created, location: @procedure_requirement }
+    else
+      format.html { render :new }
+      format.json { render json: @liprocedure_requirementne.errors, status: :unprocessable_entity }
     end
   end
+end
 
-  def update
-    respond_to do |format|
-      if @procedure_requirement.update(line_params)
-        format.html { redirect_to @procedure_requirement, notice: 'Line was successfully updated.' }
-        format.json { render :show, status: :ok, location: @procedure_requirement }
-      else
-        format.html { render :edit }
-        format.json { render json: @procedure_requirement.errors, status: :unprocessable_entity }
-      end
+def update
+  respond_to do |format|
+    if @procedure_requirement.update(line_params)
+      format.html { redirect_to @procedure_requirement, notice: 'Line was successfully updated.' }
+      format.json { render :show, status: :ok, location: @procedure_requirement }
+    else
+      format.html { render :edit }
+      format.json { render json: @procedure_requirement.errors, status: :unprocessable_entity }
     end
   end
+end
 
 
 private
@@ -53,4 +58,4 @@ private
       params.require(:procedure_requirement).permit(:id, :procedure_id, :requirement_id)
     end
 
-end
+  end
