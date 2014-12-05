@@ -73,6 +73,6 @@ class DependenciesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dependency_params
-      params.require(:dependency).permit(:nombre)
+      params.require(:dependency).permit(:nombre, :municipio_id)
     end
 end
