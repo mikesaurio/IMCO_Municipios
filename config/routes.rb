@@ -1,4 +1,20 @@
 Rails.application.routes.draw do
+  get 'procedure_lines/index'
+
+  get 'procedure_lines/show'
+
+  get 'procedure_lines/edit'
+
+  get 'procedure_lines/new'
+
+  get 'procedure_requirements/index'
+
+  get 'procedure_requirements/show'
+
+  get 'procedure_requirements/edit'
+
+  get 'procedure_requirements/new'
+
  # get 'procedure_requirements/edit'
 
   #get 'procedure_requirements/index'
@@ -7,6 +23,8 @@ Rails.application.routes.draw do
 
   #get 'procedure_requirements/show'
 
+
+resources :procedure_lines
 
   resources :procedure_requirements
 
