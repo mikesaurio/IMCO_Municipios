@@ -1,6 +1,6 @@
 class ProcedureRequirement < ActiveRecord::Base
 
-  belongs_to :procedures
-  belongs_to :requirements
+  belongs_to :procedure
+  belongs_to :requirement
 
 end

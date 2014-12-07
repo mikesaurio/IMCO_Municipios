@@ -6,6 +6,9 @@ class ProcedureRequirementsController < ApplicationController
  end
 
  def show
+  @procedure_requirements =  ProcedureRequirement.all
+    @procedure = Procedure.all
+  @Requirement = Requirement.all
  end
 
  def new
