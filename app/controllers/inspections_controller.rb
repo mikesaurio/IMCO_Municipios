@@ -15,10 +15,12 @@ class InspectionsController < ApplicationController
   # GET /inspections/new
   def new
     @inspection = Inspection.new
+    @dependency = Dependency.all
   end
 
   # GET /inspections/1/edit
   def edit
+        @dependency = Dependency.all
   end
 
   # POST /inspections
@@ -69,6 +71,6 @@ class InspectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inspection_params
-      params.require(:inspection).permit(:nombre, :materia, :duracion, :norma, :antes, :durante, :despues, :sancion)
+      params.require(:inspection).permit(:nombre, :materia, :duracion, :norma, :antes, :durante, :despues, :sancion, :dependency_id)
     end
 end

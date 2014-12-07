@@ -1,5 +1,5 @@
 class Dependency < ActiveRecord::Base
-  belongs_to :municipio #Uno
+  belongs_to :municipio 
 
 
   has_many :procedures

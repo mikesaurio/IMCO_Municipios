@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141203221852) do
+ActiveRecord::Schema.define(version: 20141207185916) do
+
+  create_table "dependencia", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "dependencies", force: true do |t|
     t.string   "nombre"
@@ -47,6 +53,7 @@ ActiveRecord::Schema.define(version: 20141203221852) do
     t.string   "sancion"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "dependency_id"
   end
 
   create_table "inspectors", force: true do |t|

@@ -43,6 +43,10 @@
     <%= f.label :sancion %><br>
     <%= f.text_field :sancion %>
   </div>
+  <div class="field">
+ <%= f.label :dependencia %><br />
+ <%= collection_select(:inspection, :dependency_id, Dependency.all, :id, :nombre, {:prompt => false}) %> 
+ </div>
   <div class="actions">
     <%= f.submit %>
   </div>
