@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'inspection_requirements/index'
+
+  get 'inspection_requirements/show'
+
+  get 'inspection_requirements/edit'
+
+  get 'inspection_requirements/new'
+
   get 'procedure_lines/index'
 
   get 'procedure_lines/show'
@@ -24,7 +32,7 @@ Rails.application.routes.draw do
   #get 'procedure_requirements/show'
 
 
-resources :procedure_lines
+  resources :procedure_lines
 
   resources :procedure_requirements
 
