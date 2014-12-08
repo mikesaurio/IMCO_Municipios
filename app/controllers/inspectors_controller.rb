@@ -5,6 +5,7 @@ class InspectorsController < ApplicationController
   # GET /inspectors.json
   def index
     @inspectors = Inspector.all
+    @dependency = Dependency.all
   end
 
   # GET /inspectors/1
@@ -15,6 +16,7 @@ class InspectorsController < ApplicationController
   # GET /inspectors/new
   def new
     @inspector = Inspector.new
+    @dependency = Dependency.all
   end
 
   # GET /inspectors/1/edit
@@ -69,6 +71,6 @@ class InspectorsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def inspector_params
-      params.require(:inspector).permit(:nombre, :vigencia, :materia, :supervisor, :contacto, :foto)
+      params.require(:inspector).permit(:nombre, :vigencia, :materia, :supervisor, :contacto, :foto, :dependency_id)
     end
 end
