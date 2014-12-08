@@ -1,6 +1,6 @@
 class InspectionLine < ActiveRecord::Base
 
-  belongs_to :inspections
-  belongs_to :lines
+  belongs_to :inspection
+  belongs_to :line
 
 end

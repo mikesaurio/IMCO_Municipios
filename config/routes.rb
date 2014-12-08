@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'inspection_lines/index'
+
+  get 'inspection_lines/show'
+
+  get 'inspection_lines/edit'
+
+  get 'inspection_lines/new'
+
   get 'inspection_requirements/index'
 
   get 'inspection_requirements/show'
@@ -31,6 +39,8 @@ Rails.application.routes.draw do
 
   #get 'procedure_requirements/show'
 
+
+  resources :inspection_lines
 
   resources :procedure_lines
 
